@@ -21,7 +21,7 @@ const Content = (props) => {
             return new Promise(resolve => {
                 Axios({
                     method: 'get',
-                    url: 'http://localhost:3010/api/getpost/',
+                    url: 'http://localhost:3050/api/getpost/',
                     headers: {'Content-Type': 'multipart/formdata' }
                 })
                 .then((response) => {
@@ -38,7 +38,7 @@ const Content = (props) => {
         let sendObj = {
             id:response.data.id,
             posterid:response.data.posterid,
-            imgurl:`http://localhost:3010/images/${imgName}`,
+            imgurl:`http://localhost:3050/images/${imgName}`,
             title:response.data.title,
             likes:response.data.likes,
             date:response.data.date

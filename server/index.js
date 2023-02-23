@@ -310,7 +310,7 @@ function getPostFromDatabase(cookie, res){
     let dateInHours = Math.floor(parseInt(Date.now())/3600000)
     let seenitSQLString = createSeenitSQLString(seenitId)
     let sqlRequirements = 
-    `WHERE ${dateInHours}-date<48 AND id != 29 AND id != 1${seenitSQLString} LIMIT 1`
+    `WHERE ${dateInHours}-date<798 AND id != 29 AND id != 1${seenitSQLString} LIMIT 1`
     let sqlSelect = 
     `SELECT * FROM posts ${sqlRequirements}`
     db.query(sqlSelect, (err, result)=>{

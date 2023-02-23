@@ -17,7 +17,7 @@ const Profile = () => {
     useEffect(() => {
         let url = profile.imgurl.slice(71, 9999999)
         if(url==='p0.jpg') url = '0.jpg'
-        setPfpImg(`http://localhost:3010/images/pfp${url}`)
+        setPfpImg(`http://localhost:3050/images/pfp${url}`)
     }, [])
 
     const addPfpToPlaceholder = (img) => {
@@ -46,7 +46,7 @@ const Profile = () => {
         Axios.defaults.withCredentials = false
         Axios({
             method: 'post',
-            url: 'http://localhost:3010/api/changepfp',
+            url: 'http://localhost:3050/api/changepfp',
             data: formdata,
             headers: {'Content-Type': 'multipart/form-data' }
         }).then(async (response) => {
@@ -60,7 +60,7 @@ const Profile = () => {
     const deleteProfile = () => {
         if(window.confirm('Are you sure you want to delete your profile? All data will be deleted.')){
             Axios.defaults.withCredentials = false
-            Axios.post('http://localhost:3010/api/deletealluserinfo', { id:profile.userId })
+            Axios.post('http://localhost:3050/api/deletealluserinfo', { id:profile.userId })
             .then(response => {
                 document.cookie = 'sessiontoken=0; expires=Thu, 18 Dec 2024 12:00:00 UTC; path=/'
                 changeProfile('reset')

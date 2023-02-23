@@ -9,7 +9,7 @@ import { useCookies } from 'react-cookie';
 export function deleteMyPost(post){
     return new Promise(resolve => {
         Axios.defaults.withCredentials = false
-        Axios.post('http://localhost:3010/api/deletepost/', { post:post })
+        Axios.post('http://localhost:3050/api/deletepost/', { post:post })
         .then(response => {
             console.log(response)
         })
@@ -41,7 +41,7 @@ const MyPosts = (props) => {
             Axios.defaults.withCredentials = true
             Axios({
                 method: 'get',
-                url: 'http://localhost:3010/api/myposts/',
+                url: 'http://localhost:3050/api/myposts/',
                 headers: {'Content-Type': 'multipart/formdata'}
             })
             .then((response) => {

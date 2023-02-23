@@ -6,7 +6,7 @@ import { profile } from '../Login_page/Main'
 export function likePost(user, post){
     return new Promise(resolve => {
         Axios.defaults.withCredentials = false
-        Axios.post('http://localhost:3010/api/likepost', {user:user, post:post})
+        Axios.post('http://localhost:3050/api/likepost', {user:user, post:post})
         .then(response => {
             resolve(response.data)
         })
@@ -59,12 +59,12 @@ const Post = (props) => {
     useEffect(()=>{
         formatPostDate(formatHoursSinceEpoch(post.date))
         Axios.defaults.withCredentials = false
-        Axios.post('http://localhost:3010/api/getprofilebyid', {id:post.posterid})
+        Axios.post('http://localhost:3050/api/getprofilebyid', {id:post.posterid})
         .then(response => {
             setName(response.data._name)
             let url = response.data.imgurl.slice(71, 444)
             if(url === 'p0.jpg') url = '0.jpg'
-            url = 'http://localhost:3010/images/pfp'+url
+            url = 'http://localhost:3050/images/pfp'+url
             setPfp(url)
             addEventListeners()
         })
@@ -73,10 +73,7 @@ const Post = (props) => {
     function addEventListeners(){
         let profileLink = document.getElementById('post-profile-'+post.id)
         profileLink.addEventListener('click', () => {
-            history.push({
-                pathname: '/other_users',
-                search: `?infoId=${post.posterid}`,
-            });
+            history('/other_users', { state: { infoId: post.posterid } })
         })
         let updoot = document.getElementById('post-updoot-'+post.id)
         updoot.addEventListener('click', async () => {
@@ -103,7 +100,7 @@ const Post = (props) => {
                     <p>{name}</p>
                 </div>
                 <div className="right">
-                    <img id={'post-updoot-'+post.id} src='http://localhost:3010/images/updoot.png'></img>
+                    <img id={'post-updoot-'+post.id} src='http://localhost:3050/images/updoot.png'></img>
                     <p id={'like-tag-'+post.id}>{post.likes}</p>
                 </div>
             </div>

@@ -28,7 +28,7 @@ export function changeProfile(id){
     if(id != 0) ID = id
     return new Promise(async (resolve) => {
         Axios.defaults.withCredentials = false
-        await Axios.post('http://localhost:3010/api/getprofile', { id:ID })
+        await Axios.post('http://localhost:3050/api/getprofile', { id:ID })
         .then((response) => {
             profile = response.data
             if(id != 0) userId = id
@@ -40,7 +40,7 @@ export function changeProfile(id){
 export function getUserIdBySessionToken(token){
     return new Promise(resolve => {
         Axios.defaults.withCredentials = false
-        Axios.post('http://localhost:3010/api/token_to_user_id', { token:token })
+        Axios.post('http://localhost:3050/api/token_to_user_id', { token:token })
         .then((response) => {
             resolve(response.data)
         })
@@ -50,7 +50,7 @@ export function getUserIdBySessionToken(token){
 export function getProfileByName(str){
     return new Promise(resolve => {
         Axios.defaults.withCredentials = false
-        Axios.post('http://localhost:3010/api/getprofilebyname', { username:str })
+        Axios.post('http://localhost:3050/api/getprofilebyname', { username:str })
         .then(response => {
             if(response.data.userId == 0) resolve(alert(`Name: ${str} was not found.`))
             resolve(response)
@@ -64,7 +64,7 @@ export function getProfileByName(str){
 export function getProfileById(id){
     return new Promise(resolve => {
         Axios.defaults.withCredentials = false
-        Axios.post('http://localhost:3010/api/getprofilebyid', { id:id })
+        Axios.post('http://localhost:3050/api/getprofilebyid', { id:id })
         .then(response =>  {
             resolve(response)
         })
@@ -82,7 +82,7 @@ const Login = () => {
         return new Promise(resolve => {
             if(ID == 0) resolve(false)
             Axios.defaults.withCredentials = false
-            Axios.post('http://localhost:3010/api/getprofile', { id:ID })
+            Axios.post('http://localhost:3050/api/getprofile', { id:ID })
             .then((response) => {
                 profile.userId = ID
                 profile = response.data
@@ -104,11 +104,11 @@ const Login = () => {
     const onSubmit = async (data) => {
         let willNavigate = false
         Axios.defaults.withCredentials = false
-        await Axios.post(`http://localhost:3010/api/${loginOperation}`, {name:data.name,password:data.password})
+        await Axios.post(`http://localhost:3050/api/${loginOperation}`, {name:data.name,password:data.password})
         .then(async (response) => {
             willNavigate = await handleResponse(response)
         })
-        if(willNavigate) history.push('/')
+        if(willNavigate)  history('/')
     }
     function handleResponse(response){
         return new Promise(async (resolve) => {
@@ -140,7 +140,7 @@ const Login = () => {
         Axios.defaults.withCredentials = true
         Axios({
             method: 'get',
-            url: 'http://localhost:3010/api/setsession',
+            url: 'http://localhost:3050/api/setsession',
             params: {id:id},
         })
         .then((response) => {

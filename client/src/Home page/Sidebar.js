@@ -30,7 +30,7 @@ const Sidebar = (props) => {
         profileName.innerText = profile._name
         let url = profile.imgurl.slice(71, 9999999)
         if(url==='p0.jpg') url = '0.jpg'
-        setPfp(`http://localhost:3010/images/pfp${url}`)
+        setPfp(`http://localhost:3050/images/pfp${url}`)
     }
 
     const romoveProfileVisualChanges = () => {
@@ -53,7 +53,7 @@ const Sidebar = (props) => {
 
     const terminateSession = (ID) => {  
         Axios.defaults.withCredentials = false
-        Axios.post('http://localhost:3010/api/terminate_session', {id:ID})
+        Axios.post('http://localhost:3050/api/terminate_session', {id:ID})
         .then(response => {
         })
     }

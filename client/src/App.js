@@ -14,7 +14,7 @@ import Axios from 'axios'
 
 /*
 window.addEventListener('beforeunload', function(event) { 
-  Axios.post('http://localhost:3010/api/onclose/')
+  Axios.post('http://localhost:3050/api/onclose/')
   .then(response => {
     console.log('nothing')
   })
@@ -54,7 +54,7 @@ if(profile.userId === 0){
       await changeProfile(await getUserIdBySessionToken(parseInt(token)))
       let url = profile.imgurl.slice(71, 999999)
       if(url==='p0.jpg') url = '0.jpg'
-      setProfilePicture('http://localhost:3010/images/pfp'+url)
+      setProfilePicture('http://localhost:3050/images/pfp'+url)
     })()
   }
 }
@@ -66,24 +66,12 @@ return (
   <Router>
   <div className="App">
     <Routes>
-      <Route exact path='/'>
-        <Home arr={backupArr} setarr={setBackupArr} pfp={profilePicture} setpfp={setProfilePicture} />
-      </Route>
-      <Route exact path='/create_post'>
-        <Create_post />
-      </Route>
-      <Route exact path='/my_posts'>
-        <MyPosts pfp={profilePicture} setpfp={setProfilePicture} />
-      </Route>
-      <Route exact path='/settings'>
-        <Settings />
-      </Route>
-      <Route path='/other_users'>
-        <OtherUsers />
-      </Route>
-      <Route exact path='/login'>
-        <Login />
-      </Route>
+      <Route path="/" element={<Home arr={backupArr} setarr={setBackupArr}/>} />
+      <Route path="/create_post" element={<Create_post />} />
+      <Route path="/my_posts" element={<MyPosts />} />
+      <Route path="/settings" element={<Settings />} />
+      <Route path="/other_users" element={<OtherUsers />} />
+      <Route path="/login" element={<Login />} />
     </Routes>
   </div>
   </Router>

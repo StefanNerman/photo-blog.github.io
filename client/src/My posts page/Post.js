@@ -28,12 +28,12 @@ const Post = (props) => {
     useEffect(()=>{
         formatPostDate(formatHoursSinceEpoch(post.date))
         Axios.defaults.withCredentials = false
-        Axios.post('http://localhost:3010/api/getprofilebyid', {id:post.posterid})
+        Axios.post('http://localhost:3050/api/getprofilebyid', {id:post.posterid})
         .then(response => {
             setName(response.data._name)
             let imgurl = response.data.imgurl.slice(71, 444)
             if(imgurl === 'p0.jpg') imgurl = '0.jpg'
-            imgurl = 'http://localhost:3010/images/pfp'+imgurl
+            imgurl = 'http://localhost:3050/images/pfp'+imgurl
             setPfp(imgurl)
             addEventListeners()
         })
@@ -115,14 +115,14 @@ const Post = (props) => {
                     </div>
                 </div>
             </div>
-            <img src={'http://localhost:3010/images/'+url}></img>
+            <img src={'http://localhost:3050/images/'+url}></img>
             <div className="post-bottom">
                 <div className="left" id={'mypost-profile-'+post.id}>
                     <img src={pfp}></img>
                     <p>{name}</p>
                 </div>
                 <div className="right">
-                    <img id={'mypost-updoot-'+post.id} src='http://localhost:3010/images/updoot.png'></img>
+                    <img id={'mypost-updoot-'+post.id} src='http://localhost:3050/images/updoot.png'></img>
                     <p id={'mylike-tag-'+post.id}>{post.likes}</p>
                 </div>  
             </div>

@@ -35,7 +35,7 @@ const Create_post = () => {
     const handleApi = (post) => {
         Axios({
             method: 'post',
-            url: 'http://localhost:3010/api/post',
+            url: 'http://localhost:3050/api/post',
             data: post,
             headers: {'Content-Type': 'multipart/form-data' }
         }).then((response) => {
@@ -101,7 +101,7 @@ const Create_post = () => {
                     </div>
                 </div>
                 <div className='create-profile-box'>
-                    <img src={'http://localhost:3010/images/pfp'+pfp}></img>
+                    <img src={'http://localhost:3050/images/pfp'+pfp}></img>
                     <p>{profile._name}</p>
                 </div>
                 <input type='submit' className='create-submit-btn' name='submitButton'/>

@@ -12,7 +12,7 @@ const NotMyPosts = (props) => {
 
     let url = profile.imgurl.slice(71, 999999)
     if(url==='p0.jpg') url = '0.jpg'
-    url = 'http://localhost:3010/images/pfp'+url
+    url = 'http://localhost:3050/images/pfp'+url
 
 
 
@@ -33,7 +33,7 @@ const NotMyPosts = (props) => {
     const handleApi = () => {
         return new Promise(resolve => {
             Axios.defaults.withCredentials = false
-            Axios.post('http://localhost:3010/api/getpostsbyuserid', {id:profile.userId})
+            Axios.post('http://localhost:3050/api/getpostsbyuserid', {id:profile.userId})
             .then((response) => {
                 resolve(response.data)                  
             })

@@ -10,9 +10,9 @@ const OtherUsers = (props) => {
 
     const { search } = useLocation();
 
+    const { state: { infoId } = {} } = useLocation();
+
     useEffect(()=>{
-        const searchParams = new URLSearchParams(search);
-        const infoId = searchParams.get("infoId");
         if(parseInt(infoId) === 0) return
         handleSearchParams(infoId)
     }, [])
