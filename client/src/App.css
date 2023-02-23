@@ -1,0 +1,96 @@
+@font-face {
+  font-family: main-font;
+  src: url(res/fonts/OpenSans-Regular.ttf);
+}
+:root {
+  --bg-post-25: rgb(25,25,25);
+  --clr-45: rgb(45,45,45);
+  --clr-66:rgb(66,66,66);
+  --main-font-clr: white;
+  --highlighted:rgb(240,240,50);
+  --body-bg:linear-gradient(to top, rgb(42, 75, 64) -380%, rgb(22,22,22));
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-height: 100vh;
+  background: var(--body-bg);
+  background-repeat: no-repeat;
+}
+
+* {
+  font-family: main-font, sans-serif;
+}
+
+.App {
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  position: relative;
+  max-height: 100vh;
+}
+.App > * {
+  max-height: 100vh;
+}
+
+.full-collapse {
+  visibility: collapse;
+  max-width: 0 !important;
+  max-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+#not-header {
+  translate: 0 -70px;
+  display: flex;
+  max-height: 100vh;
+}
+
+textarea {
+  resize: none;
+}
+
+.content-page {
+  max-height: 100vh;
+  overflow: hidden;
+  overflow-y: scroll;
+  padding-top: 4rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.content-page .see-more-btn {
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  border: none;
+  background-color: var(--clr-66);
+  color: var(--main-font-clr);
+  border-radius: 15px;
+  border: 1.2px solid black;
+  width: 100px;
+  min-height: 30px !important;
+}
+.content-page #delete-cookie {
+  margin: 0;
+}
+
+.content-page::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+.content-page::-webkit-scrollbar-track {
+  -webkit-margin-before: 0.5rem;
+          margin-block-start: 0.5rem;
+  background: transparent;
+}
+
+.content-page::-webkit-scrollbar-thumb {
+  background-color: rgb(77, 77, 77);
+  height: 10%;
+  border-radius: 100vw;
+}/*# sourceMappingURL=App.css.map */

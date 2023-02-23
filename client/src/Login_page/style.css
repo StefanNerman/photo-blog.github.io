@@ -1,0 +1,83 @@
+.login-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.login-wrapper {
+  margin-top: 3rem;
+  background-color: var(--bg-post-25);
+  border: 1px solid var(--clr-66);
+  padding: 1.25rem;
+  border-radius: 3px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  flex-direction: column;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.login-wrapper h1 {
+  margin: 0;
+  color: var(--main-font-clr);
+}
+.login-wrapper .back-btn {
+  position: absolute;
+  top: -1.85rem;
+  left: 0;
+  text-decoration: none;
+  cursor: pointer;
+  background: transparent;
+  color: var(--main-font-clr);
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  border: none;
+}
+.login-wrapper .back-btn:hover {
+  background: transparent;
+  text-decoration: underline;
+}
+
+.login-box {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.login-box button {
+  padding: 0 1rem;
+  border-radius: 15px;
+  min-height: 30px;
+  border: none;
+  color: var(--main-font-clr);
+  margin: 0.25rem;
+  background-color: var(--clr-66);
+  cursor: pointer;
+}
+
+.form {
+  visibility: collapse;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form * {
+  margin: 0.1rem;
+}
+.form label {
+  color: var(--main-font-clr);
+}
+.form .submit-btn {
+  padding: 0 1rem;
+  border-radius: 15px;
+  min-height: 30px;
+  border: none;
+  margin: 0.25rem;
+  margin-top: 1rem;
+  background-color: var(--clr-66);
+  cursor: pointer;
+  color: var(--main-font-clr);
+}/*# sourceMappingURL=style.css.map */
