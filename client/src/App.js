@@ -66,9 +66,9 @@ return (
   <Router>
   <div className="App">
     <Routes>
-      <Route path="/" element={<Home arr={backupArr} setarr={setBackupArr}/>} />
+      <Route path="/" element={<Home arr={backupArr} setarr={setBackupArr} pfp={profilePicture} setpfp={setProfilePicture}/>} />
       <Route path="/create_post" element={<Create_post />} />
-      <Route path="/my_posts" element={<MyPosts />} />
+      <Route path="/my_posts" element={<MyPosts pfp={profilePicture} setpfp={setProfilePicture} />} />
       <Route path="/settings" element={<Settings />} />
       <Route path="/other_users" element={<OtherUsers />} />
       <Route path="/login" element={<Login />} />
