@@ -12,7 +12,8 @@ I made this website to practice building fullstack applications with a working d
 
 Front-end: 
 - React
-- Sass, Axios
+- Sass
+- Axios
 
 Back-end:
 - Node js
