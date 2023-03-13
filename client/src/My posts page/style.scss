@@ -26,13 +26,16 @@
     border:1px solid var(--clr-66);
     width:100%;
     img {
-        margin:1rem;
+        margin:0.3rem;
+        margin-bottom: 0;
+        margin-top: 2rem;
         background-color: grey;
-        min-width: 160px;
+        max-height: 85px;
+        max-width: 85px;
     }
 }
 .myposts-profilebox-text {
-    margin-left:0.75rem;
+    margin-left:0.55rem;
     h3 {
         margin:0;
         margin-top: 1.8rem;
@@ -72,7 +75,7 @@
 
 //POST
 .narrow-post-frame{
-    width:90%;
+    width:87%;
     max-width: 600px !important;
     .post-bottom {
         margin-top: 1.5rem;
@@ -151,7 +154,6 @@
 
 @media screen and (max-width:500px){
     .myposts-profilebox{
-        flex-direction: column;
-        align-items: center;
+        
     }
 }

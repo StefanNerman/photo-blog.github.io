@@ -36,6 +36,19 @@ const anonymus = {
     imgurl:'C:/users/rur7ro/documents/projects js/databases/photo_website/images/pfp0.jpg'
 }
 
+//below port for testing purposes
+app.post('/online_test/post/', (req, res) => {
+	let message = req.body.message
+	let sqlstr = `INSERT INTO onlinetest (message) VALUES ('${message}')`
+	db.query(sqlstr, (err, result) => {res.send(200)})
+})
+app.get('/online_test/get/', (req, res) => {
+	let sqlstr = `SELECT * FROM onlinetest`
+    let send
+	db.query(sqlstr, (err, result) => {send = JSON.stringify(result)})
+    res.json(send)
+})
+
 
 app.get('/api/testing/', (req, res) => {
     let sql = `SELECT * FROM posts`

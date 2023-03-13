@@ -83,7 +83,7 @@ const Sidebar = (props) => {
                 </li>
                 <li>
                     {profile.userId == 0 && <div className='cover-links'><p>Sign in required</p></div>}
-                    <Link to={{pathname: '/other_users',search: `?infoId=${0}`,}}
+                    <Link to='/other_users' state={{ infoId: 0 }}
                      className='list-link'>Other users</Link>
                 </li>
             </ul>

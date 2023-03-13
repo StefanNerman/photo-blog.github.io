@@ -356,6 +356,7 @@ textarea {
     visibility: collapse;
     min-width: 0px;
     max-width: 0px;
+    border: none;
   }
   #navbar {
     visibility: visible;

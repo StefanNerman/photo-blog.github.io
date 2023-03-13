@@ -179,8 +179,8 @@ textarea {
     height:100vh;
     max-height: 100vh;
     min-width: 170px;
-    width:35vw;
-    max-width:350px;
+    width: 35vw;
+    max-width: 350px;
     background-color: var(--bg-post-25);
     z-index: 11;
     border-right: 1px solid rgb(45,45,45);
@@ -355,6 +355,7 @@ textarea {
         visibility: collapse;
         min-width: 0px;
         max-width:0px;
+        border: none;
     }
     #navbar {
         visibility: visible;
